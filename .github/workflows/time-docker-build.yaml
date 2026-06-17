@@ -25,7 +25,7 @@ jobs:
         uses: docker/setup-qemu-action@v4
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
+        uses: docker/setup-buildx-action@v4.1.0
 
       # For PRs, checkout the base branch to compare against
       - name: Checkout base branch
