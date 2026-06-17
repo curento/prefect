@@ -253,7 +253,7 @@ jobs:
       - name: Login to GCP Artifact Registry
         env:
           GCP_AUTH_TOKEN: ${{ steps.gcp_auth.outputs.auth_token }}
-        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a # v2.1.0
+        uses: docker/login-action@650006c6eb7dba73a995cc03b0b2d7f5ca915bee # v4.2.0
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
           username: oauth2accesstoken
@@ -281,7 +281,7 @@ jobs:
       - name: Login to GCP Artifact Registry
         env:
           GCP_AUTH_TOKEN: ${{ steps.gcp_auth_push.outputs.auth_token }}
-        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a # v2.1.0
+        uses: docker/login-action@650006c6eb7dba73a995cc03b0b2d7f5ca915bee # v4.2.0
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
           username: oauth2accesstoken
