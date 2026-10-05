@@ -1,9 +1,49 @@
+<p align="center"><img src="https://github.com/PrefectHQ/prefect/assets/3407835/c654cbc6-63e8-4ada-a92a-efd2f8f24b85" width=1000></p>
+
+<p align="center">
+    <a href="https://pypi.org/project/prefect/" alt="PyPI version">
+        <img alt="PyPI" src="https://img.shields.io/pypi/v/prefect?color=0052FF&labelColor=090422" />
+    </a>
+    <a href="https://pypi.org/project/prefect/" alt="PyPI downloads/month">
+        <img alt="Downloads" src="https://img.shields.io/pypi/dm/prefect?color=0052FF&labelColor=090422" />
+    </a>
+    <a href="https://github.com/prefecthq/prefect/" alt="Stars">
+        <img src="https://img.shields.io/github/stars/prefecthq/prefect?color=0052FF&labelColor=090422" />
+    </a>
+    <a href="https://github.com/prefecthq/prefect/pulse" alt="Activity">
+        <img src="https://img.shields.io/github/commit-activity/m/prefecthq/prefect?color=0052FF&labelColor=090422" />
+    </a>
+    <br>
+    <a href="https://prefect.io/slack" alt="Slack">
+        <img src="https://img.shields.io/badge/slack-join_community-red.svg?color=0052FF&labelColor=090422&logo=slack" />
+    </a>
+    <a href="https://www.youtube.com/c/PrefectIO/" alt="YouTube">
+        <img src="https://img.shields.io/badge/youtube-watch_videos-red.svg?color=0052FF&labelColor=090422&logo=youtube" />
+    </a>
+</p>
 
 
-  
-
-
-[Installation](https://docs.prefect.io/v3/get-started/index?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none) · [Quickstart](https://docs.prefect.io/v3/get-started/quickstart?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none) · [Build workflows](https://docs.prefect.io/v3/how-to-guides/workflows/write-and-run?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none) · [Deploy workflows](https://docs.prefect.io/v3/concepts/deployments?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none) · [Prefect Cloud](https://app.prefect.cloud/?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none)
+<p align="center">
+    <a href="https://docs.prefect.io/v3/get-started/index?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none">
+        Installation
+    </a>
+    ·
+    <a href="https://docs.prefect.io/v3/get-started/quickstart?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none">
+        Quickstart
+    </a>
+    ·
+    <a href="https://docs.prefect.io/v3/how-to-guides/workflows/write-and-run?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none">
+        Build workflows
+    </a>
+    ·
+    <a href="https://docs.prefect.io/v3/concepts/deployments?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none">
+        Deploy workflows
+    </a>
+    ·
+    <a href="https://app.prefect.cloud/?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none">
+        Prefect Cloud
+    </a>
+</p>
 
 # Prefect
 
@@ -17,10 +57,8 @@ Workflow activity is tracked and can be monitored with a self-hosted [Prefect se
 
 > [!TIP]
 > Prefect flows can handle retries, dependencies, and even complex branching logic
->
+> 
 > [Check our docs](https://docs.prefect.io/v3/get-started/index?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none) or see the example below to learn more!
-
-
 
 ## Getting started
 
@@ -59,7 +97,7 @@ if __name__ == "__main__":
     github_stars(["PrefectHQ/prefect"])
 ```
 
-Fire up a Prefect server and open the UI at [http://localhost:4200](http://localhost:4200) to see what happened:
+Fire up a Prefect server and open the UI at http://localhost:4200 to see what happened:
 
 ```bash
 prefect server start
@@ -81,12 +119,10 @@ Additionally you can run your workflow manually from the UI or CLI. You can even
 
 > [!TIP]
 > Where to go next - check out our [documentation](https://docs.prefect.io/v3/get-started/index?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none) to learn more about:
->
 > - [Deploying flows to production environments](https://docs.prefect.io/v3/deploy?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none)
 > - [Adding error handling and retries](https://docs.prefect.io/v3/develop/write-tasks#retries?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none)
 > - [Integrating with your existing tools](https://docs.prefect.io/integrations/integrations?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none)
 > - [Setting up team collaboration features](https://docs.prefect.io/v3/manage/cloud/manage-users/manage-teams#manage-teams?utm_source=oss&utm_medium=oss&utm_campaign=oss_gh_repo&utm_term=none&utm_content=none)
-
 
 
 ## Prefect Cloud
@@ -101,22 +137,20 @@ If your use case is geared towards communicating with Prefect Cloud or a remote 
 [prefect-client](https://pypi.org/project/prefect-client/). It is a lighter-weight option for accessing client-side functionality in the Prefect SDK and is ideal for use in ephemeral execution environments.
 
 ## Connect & Contribute
-
 Join a thriving community of over 25,000 practitioners who solve data challenges with Prefect. Prefect's community is built on collaboration, technical innovation, and continuous improvement.
 
 ### Community Resources
-
 🌐 **[Explore the Documentation](https://docs.prefect.io)** - Comprehensive guides and API references  
 💬 **[Join the Slack Community](https://prefect.io/slack)** - Connect with thousands of practitioners  
 🤝 **[Contribute to Prefect](https://docs.prefect.io/contribute/)** - Help shape the future of the project  
- 🔌 **[Support or create a new Prefect integration](https://docs.prefect.io/contribute/contribute-integrations)** - Extend Prefect's capabilities  
+ 🔌 **[Support or create a new Prefect integration](https://docs.prefect.io/contribute/contribute-integrations)** - Extend Prefect's capabilities   
 📋 **[Tail the Dev Log](https://dev-log.prefect.io/)** - Prefect's open source development blog
 
 ### Stay Informed
-
 📥 **[Subscribe to our Newsletter](https://prefect.io/newsletter)** - Get the latest Prefect news and updates  
 📣 **[X](https://x.com/PrefectIO)** and **[Bluesky](https://bsky.app/profile/prefect.io)** - Latest updates and announcements  
 📺 **[YouTube](https://www.youtube.com/@PrefectIO)** - Video tutorials and webinars  
 📱 **[LinkedIn](https://www.linkedin.com/company/prefect)** - Professional networking and company news  
 
-Your contributions, questions, and ideas make Prefect better every day. Whether you're reporting bugs, suggesting features, or improving documentation, your input is invaluable to the Prefect community
+Your contributions, questions, and ideas make Prefect better every day. Whether you're reporting bugs, suggesting features, or improving documentation, your input is invaluable to the Prefect community.
+
