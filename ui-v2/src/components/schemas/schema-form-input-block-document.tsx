@@ -11,7 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 type BlockDocumentReferenceValue =
 	| {
-			$ref: string;
+			$ref: { block_document_id: string } | string;
 	  }
 	| undefined;
 
@@ -78,18 +78,23 @@ function SchemaFormInputBlockDocumentContent({
 	);
 
 	const hasBlockDocuments = blockDocumentCount > 0;
-	const selectedBlockDocumentId = value?.$ref;
+	// The API expects `{ $ref: { block_document_id } }`; also accept the legacy
+	// string form when reading an existing value.
+	const selectedBlockDocumentId =
+		typeof value?.$ref === "string"
+			? value.$ref
+			: value?.$ref?.block_document_id;
 
 	const handleSelect = (blockDocumentId: string | undefined) => {
 		if (blockDocumentId) {
-			onValueChange({ $ref: blockDocumentId });
+			onValueChange({ $ref: { block_document_id: blockDocumentId } });
 		} else {
 			onValueChange(undefined);
 		}
 	};
 
 	const handleCreated = (blockDocumentId: string) => {
-		onValueChange({ $ref: blockDocumentId });
+		onValueChange({ $ref: { block_document_id: blockDocumentId } });
 	};
 
 	return (
