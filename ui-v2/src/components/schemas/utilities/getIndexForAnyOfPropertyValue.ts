@@ -40,28 +40,37 @@ export function getIndexForAnyOfPropertyValue({
 		const index = definitions.findIndex(
 			(definition) => !isDefined(definition.type),
 		);
-		return index >= 0 ? index : 0;
+		return validIndex(index);
 	}
 
 	switch (typeof valueOrDefaultValue) {
 		case "string":
-			return definitions.findIndex(
-				(definition) => definition.type === "string",
+			return validIndex(
+				definitions.findIndex((definition) => definition.type === "string"),
 			);
 		case "number":
-			return definitions.findIndex(
-				(definition) =>
-					definition.type === "number" || definition.type === "integer",
+			return validIndex(
+				definitions.findIndex(
+					(definition) =>
+						definition.type === "number" || definition.type === "integer",
+				),
 			);
 		case "boolean":
-			return definitions.findIndex(
-				(definition) => definition.type === "boolean",
+			return validIndex(
+				definitions.findIndex((definition) => definition.type === "boolean"),
 			);
 		case "object":
-			return getObjectDefinitionIndex(valueOrDefaultValue, definitions);
+			return validIndex(
+				getObjectDefinitionIndex(valueOrDefaultValue, definitions),
+			);
 		default:
-			return -1;
+			return 0;
 	}
+}
+
+/** anyOf[-1] is undefined and crashes the schema form. */
+function validIndex(index: number): number {
+	return index >= 0 ? index : 0;
 }
 
 /**
@@ -148,8 +157,20 @@ function getRecordDefinitionIndex(
 		[0, 0],
 	);
 
+	// An untyped dict (`additionalProperties`, no `properties`) can hold any
+	// record. Prefer it when the value shares no keys with a structured model.
 	if (keysInCommon === 0) {
-		return -1;
+		const openObjectIndex = definitions.findIndex(
+			(definition) =>
+				definition.type === "object" &&
+				(!("properties" in definition) || !definition.properties),
+		);
+
+		if (openObjectIndex >= 0) {
+			return openObjectIndex;
+		}
+
+		return definitions.findIndex((definition) => definition.type === "object");
 	}
 
 	return index;
