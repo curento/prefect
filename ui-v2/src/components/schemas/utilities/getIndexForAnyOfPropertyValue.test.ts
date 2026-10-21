@@ -92,6 +92,31 @@ describe("getIndexForAnyOfPropertyValue", () => {
 		});
 	});
 
+	test("selects an open object for a populated dict", () => {
+		const property = {
+			anyOf: [
+				{ type: "null" },
+				{ type: "object", additionalProperties: true },
+			],
+		} as unknown as SchemaObject;
+		expect(
+			getIndexForAnyOfPropertyValue({
+				value: { failure: { enabled: true, recipients: ["a@b.c"] } },
+				property,
+				schema,
+			}),
+		).toBe(1);
+	});
+
+	test("falls back to 0 when no definition matches", () => {
+		const property = {
+			anyOf: [{ type: "number" }, { type: "boolean" }],
+		} as unknown as SchemaObject;
+		expect(
+			getIndexForAnyOfPropertyValue({ value: "hello", property, schema }),
+		).toBe(0);
+	});
+
 	test("returns 0 when using default value and value is undefined", () => {
 		const property = {
 			anyOf: [{ type: "string" }, { type: "number" }],
