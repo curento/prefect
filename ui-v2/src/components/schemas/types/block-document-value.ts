@@ -3,9 +3,11 @@
  * This is how nested block references come from the server.
  */
 export type BlockDocumentReferenceValue = {
-	$ref: {
-		block_document_id: string;
-	};
+	$ref:
+		| {
+				block_document_id: string;
+		  }
+		| string;
 };
 
 /**
@@ -23,14 +25,17 @@ export type BlockDocumentValue = {
 export function isBlockDocumentReferenceValue(
 	value: unknown,
 ): value is BlockDocumentReferenceValue {
+	if (typeof value !== "object" || value === null || !("$ref" in value)) {
+		return false;
+	}
+	const ref = (value as Record<string, unknown>).$ref;
+	if (typeof ref === "string") {
+		return true;
+	}
 	return (
-		typeof value === "object" &&
-		value !== null &&
-		"$ref" in value &&
-		typeof (value as Record<string, unknown>).$ref === "object" &&
-		(value as Record<string, unknown>).$ref !== null &&
-		"block_document_id" in
-			((value as Record<string, unknown>).$ref as Record<string, unknown>)
+		typeof ref === "object" &&
+		ref !== null &&
+		"block_document_id" in (ref as Record<string, unknown>)
 	);
 }
 

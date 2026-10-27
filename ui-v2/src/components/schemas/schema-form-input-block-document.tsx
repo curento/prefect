@@ -8,16 +8,11 @@ import { BlockDocumentCreateDialog } from "@/components/blocks/block-document-cr
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { Skeleton } from "@/components/ui/skeleton";
-
-type BlockDocumentReferenceValue =
-	| {
-			$ref: { block_document_id: string } | string;
-	  }
-	| undefined;
+import type { BlockDocumentReferenceValue } from "./types/block-document-value";
 
 type SchemaFormInputBlockDocumentProps = {
-	value: BlockDocumentReferenceValue;
-	onValueChange: (value: BlockDocumentReferenceValue) => void;
+	value: BlockDocumentReferenceValue | undefined;
+	onValueChange: (value: BlockDocumentReferenceValue | undefined) => void;
 	blockTypeSlug: string;
 	id: string;
 };

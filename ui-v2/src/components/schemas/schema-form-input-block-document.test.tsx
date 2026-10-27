@@ -153,4 +153,20 @@ describe("SchemaFormInputBlockDocument", () => {
 
 		await waitFor(() => expect(screen.getByText("my_block_0")).toBeVisible());
 	});
+
+	it("displays the selected block when the value is a legacy string $ref", async () => {
+		setupMocks();
+
+		render(
+			<SchemaFormInputBlockDocument
+				value={{ $ref: "block-1" }}
+				onValueChange={vi.fn()}
+				blockTypeSlug="aws-credentials"
+				id="test-id"
+			/>,
+			{ wrapper: createWrapper() },
+		);
+
+		await waitFor(() => expect(screen.getByText("my_block_0")).toBeVisible());
+	});
 });
