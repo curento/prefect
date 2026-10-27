@@ -16,7 +16,7 @@ FORCE_RELEASE_VERSION="${6:-false}"
 SINGLE_PYTHON_VERSION="${7:-}"
 
 # Docker build configuration
-PYTHON_VERSIONS=("3.9" "3.10" "3.11" "3.12" "3.13")
+PYTHON_VERSIONS=("3.11" "3.12" "3.13")
 FLAVORS=("")
 IMAGES=("prefect")
 PLATFORMS="linux/amd64"
