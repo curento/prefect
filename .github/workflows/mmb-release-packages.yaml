@@ -96,7 +96,7 @@ jobs:
 
       - name: Authenticate to Google Cloud (Workload Identity)
         id: gcp_auth
-        uses: google-github-actions/auth@c200f3691d83b41bf9bbd8638997a462592937ed # v2
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
         with:
           project_id: ${{ env.ARTIFACT_REGISTRY_GCP_PROJECT }}
           workload_identity_provider: ${{ env.ARTIFACT_REGISTRY_WORKLOAD_IDENTITY_PROVIDER }}
@@ -242,7 +242,7 @@ jobs:
 
       - name: Authenticate to Google Cloud (Workload Identity)
         id: gcp_auth
-        uses: google-github-actions/auth@c200f3691d83b41bf9bbd8638997a462592937ed # v2
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
         with:
           project_id: ${{ env.ARTIFACT_REGISTRY_GCP_PROJECT }}
           workload_identity_provider: ${{ env.ARTIFACT_REGISTRY_WORKLOAD_IDENTITY_PROVIDER }}
@@ -273,7 +273,7 @@ jobs:
 
       - name: Reauthenticate to Google Cloud (Workload Identity)
         id: gcp_auth_push
-        uses: google-github-actions/auth@c200f3691d83b41bf9bbd8638997a462592937ed # v2
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
         with:
           project_id: ${{ env.ARTIFACT_REGISTRY_GCP_PROJECT }}
           workload_identity_provider: ${{ env.ARTIFACT_REGISTRY_WORKLOAD_IDENTITY_PROVIDER }}
